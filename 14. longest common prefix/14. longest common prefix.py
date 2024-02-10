@@ -1,12 +1,13 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-     
-        if not strs:  # Handle empty input list
-            return ""
-
-        shortest = min(strs, key=len)  # Find the shortest string
-        for i, char in enumerate(shortest):
-            for other in strs:
-                if other[i] != char:
-                    return shortest[:i]  
-        return shortest 
+        prefix="" 
+        shortest_string= min(strs, key=len)
+  
+        for i in range(len(shortest_string)): 
+            for other_strings in strs:
+                if not other_strings[i]== shortest_string[i]:
+                    return prefix
+                
+            prefix+=shortest_string[i]
+        return prefix
+       
