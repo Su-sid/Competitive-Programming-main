@@ -1,6 +1,3 @@
-# from math import exp
-
-
 class Solution:
     def getSum(self, a: int, b: int) -> int:
         summation = a, b
