@@ -1,16 +1,14 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         arr_dict= defaultdict(list)
-
-        print(arr_dict)
+        # print(arr_dict)
 
         for i, num in enumerate(nums):
-            arr_dict[num].append(i)
-        
+            arr_dict[num].append(i) 
         sort_arr= sorted(nums)
         left= 0
         right= len(sort_arr)-1
-        print(arr_dict)
+        # print(arr_dict)
        
         while left < right:
             if sort_arr[left] + sort_arr[right] == target:
