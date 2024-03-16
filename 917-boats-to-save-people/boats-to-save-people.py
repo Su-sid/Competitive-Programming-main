@@ -12,6 +12,8 @@ class Solution:
             # if left<=right and 
             if total>=people[left]:
                 left+=1
+
+      
         return counter
 
 
