@@ -27,7 +27,6 @@ class Solution:
         prefix.append(0)
 
         for i in range(1, n+1):
-            print(prefix[i-1], (prefix[n] - prefix[i]))
             if prefix[i-1] == (prefix[n] - prefix[i]):
                 return i-1
         
