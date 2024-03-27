@@ -25,7 +25,7 @@ class Solution:
         for i in range(1, n):
             prefix.append(nums[i] + prefix[-1])
         prefix.append(0)
-        # print(prefix)
+
         for i in range(1, n+1):
             print(prefix[i-1], (prefix[n] - prefix[i]))
             if prefix[i-1] == (prefix[n] - prefix[i]):
