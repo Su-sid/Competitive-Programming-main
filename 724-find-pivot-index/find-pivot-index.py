@@ -1,33 +1,22 @@
-# class Solution:
-#     def pivotIndex(self, nums: List[int]) -> int:
-#         n = len(nums)
-#         prefix_num = 0
-#         prefix = []
-#         for number in nums:
-#             prefix_num += number
-#             prefix.append(prefix_num)
-
-#         prefix.append(0)
-#         print(prefix)
-        
-#         i=1
-#         while i < n+1:#Exclusive Prefix Sum
-#             print(prefix[i-1], (prefix[n] - prefix[i]))
-#             if prefix[i-1] == (prefix[n] - prefix[i]):
-#                 return i-1
-#             i+=1
-        
-#         return -1
 class Solution:
-    def pivotIndex(self, nums: List[int]) -> int:
-        prefix = [0, nums[0]]
-        n = len(nums)
+    
+    def get_prefix(self, nums):
+        n = len(nums) + 1
+        prefix = [0] * n
         for i in range(1, n):
-            prefix.append(nums[i] + prefix[-1])
-        prefix.append(0)
+            prefix[i] = prefix[i-1] + nums[i-1]
+        return prefix
 
-        for i in range(1, n+1):
-            if prefix[i-1] == (prefix[n] - prefix[i]):
-                return i-1
+    def pivotIndex(self, nums):
+        prefix = self.get_prefix(nums)
+        total_sum = prefix[-1]  
+        for i in range(len(nums)):
+            left_sum = prefix[i]
+            right_sum = total_sum - prefix[i] - nums[i]
+            if left_sum == right_sum:
+                return i  
+        return -1  
         
-        return -1
+obj = Solution()
+final = obj.pivotIndex([1,7,3,6,5,6])
+print(final)
