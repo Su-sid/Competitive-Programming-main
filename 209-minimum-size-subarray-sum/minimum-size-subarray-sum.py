@@ -9,4 +9,4 @@ class Solution:
                 minlen = min(minlen, r-l+1)
                 sum -= nums[l]
                 l += 1
-        return minlen if minlen<=len(nums) else 0  
+        return 0 if minlen>len(nums) else minlen  
