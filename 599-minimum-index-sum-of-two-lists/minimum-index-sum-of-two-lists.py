@@ -1,21 +1,15 @@
 class Solution:
     def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
-        otherList= selectedList= []
+     
         store= defaultdict(list)
-        if len(list1)<len(list2):
-            selectedList= list1
-            otherList=list2
-        else:
-            selectedList= list2
-            otherList=list1
+        if len(list1)>len(list2):
+            list1,list2=  list2, list1
         
-        for i, num in enumerate(selectedList):
+        for i, num in enumerate(list1):
             Total=0
-            if num in otherList:
-                Total= i + otherList.index(num)
-                
-                store[Total].append(num)
-            
+            if num in list2:
+                Total= i + list2.index(num)
+                store[Total].append(num)  
         
         final=min(store.items())
         return final[1]
