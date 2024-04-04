@@ -5,6 +5,7 @@ class Solution:
         res=[1]* n
         prefix=1
         postfix=1
+        
         for i in range(n):
             res[i]= prefix
             prefix*= nums[i]
