@@ -2,8 +2,6 @@ class Solution:
     def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
         otherList= selectedList= []
         store= defaultdict(list)
-        
-
         if len(list1)<len(list2):
             selectedList= list1
             otherList=list2
@@ -19,7 +17,7 @@ class Solution:
                 store[Total].append(num)
             
         
-        final=min(store.items(), key=lambda a: a[0])
+        final=min(store.items())
         return final[1]
 
 
