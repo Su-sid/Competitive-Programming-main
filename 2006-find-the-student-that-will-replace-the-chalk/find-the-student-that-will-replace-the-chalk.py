@@ -6,7 +6,7 @@ class Solution:
             prefix_sum[i] = prefix_sum[i-1] + chalk[i]
         remainder = k % prefix_sum[-1]
         
-        #apply binary search on prefix_sum array, target = remainder 
+       
         start = 0
         end = len(prefix_sum) - 1
         while start <= end:
