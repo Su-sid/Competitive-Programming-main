@@ -4,19 +4,30 @@
 #         self.val = x
 #         self.next = None
 
+# class Solution:
+#     def hasCycle(self, head: Optional[ListNode]) -> bool:
+#         slow, fast= head, head 
+
+#         # if head is None:
+#         #     return False
+
+#         while fast and fast.next:
+#             slow= slow.next
+#             fast=  fast.next.next
+            
+#             if slow== fast:
+#                 # print(fast)
+#                 return True 
+#         return False 
+        
+
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        slow, fast= head, head 
-
-        # if head is None:
-        #     return False
-
-        while fast and fast.next:
-            slow= slow.next
-            fast=  fast.next.next
-            
-            if slow== fast:
-                # print(fast)
+        hashmap= set()
+        while head:
+            if head in hashmap:
                 return True 
+            hashmap.add(head)
+            head =head.next
         return False 
         
