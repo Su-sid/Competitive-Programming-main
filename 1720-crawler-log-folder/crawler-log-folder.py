@@ -3,7 +3,6 @@ class Solution:
         stack = []
         for log in logs:
             if log not in ('../', './'):
-                # print(log[:-1])
                 stack.append(log)
             elif log == '../' and stack:
                 stack.pop()
