@@ -4,7 +4,7 @@ class Solution:
         for log in logs:
             if log not in ('../', './'):
                 # print(log[:-1])
-                stack.append(log[:-1])
+                stack.append(log)
             elif log == '../' and stack:
                 stack.pop()
             else:
