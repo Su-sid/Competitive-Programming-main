@@ -8,15 +8,12 @@ class Solution:
             '}': '{',
             ']': '['
         }
-
         for paran in s:
             if paran in ('(', '[', '{'):
                 stack.append(paran)
 
             elif stack and par[paran] == stack[-1]: 
                 stack.pop()
-
             else:
                 return False 
-
         return len(stack) == 0
