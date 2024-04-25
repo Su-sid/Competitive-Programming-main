@@ -1,10 +1,10 @@
 class RecentCounter:
 
     def __init__(self):
-        #set an empty queue
+        #empty queue
         self.queue= deque()
         self.top=3000
-        # self.final=null
+       
 
     def ping(self, t: int) -> int:
         self.queue.append(t)
