@@ -5,7 +5,8 @@
 #         self.next = next
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
-#using pointers approach
+#using pointers 
+
         # dummy = ListNode()
         # dummy.next = head
         # prev = dummy
@@ -22,8 +23,9 @@ class Solution:
         #         cur = cur.next
 
         # return dummy.next
+
 #using hashmap
-        # def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+       
         dic=defaultdict(int)
         cur=head
         while cur:
@@ -33,10 +35,8 @@ class Solution:
         # ans=[]
         newLi=ListNode(0)
         dummy=newLi
-        for i in dic:#.items():
+        for i in dic:
             if dic[i]==1:
-                # ans.append(i)
-        # for i in range(len(ans)):
                 newNode=ListNode(i)
                 newLi.next=newNode
                 newLi=newLi.next
