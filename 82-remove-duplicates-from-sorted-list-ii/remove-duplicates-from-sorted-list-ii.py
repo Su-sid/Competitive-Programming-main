@@ -24,15 +24,15 @@ class Solution:
         # return dummy.next
 #using hashmap
         # def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        a=[]
+        dic=defaultdict(int)
         cur=head
         while cur:
-            a.append(cur.val)
+            dic[cur.val]+=1
             cur=cur.next
-        dic=Counter(a)
+        
         ans=[]
-        for i,j in dic.items():
-            if j==1:
+        for i in dic:#.items():
+            if dic[i]==1:
                 ans.append(i)
         p=ListNode(0)
         k=p
