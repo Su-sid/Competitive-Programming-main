@@ -30,16 +30,16 @@ class Solution:
             dic[cur.val]+=1
             cur=cur.next
         
-        ans=[]
+        # ans=[]
+        newLi=ListNode(0)
+        dummy=newLi
         for i in dic:#.items():
             if dic[i]==1:
-                ans.append(i)
-        p=ListNode(0)
-        k=p
-        for i in range(len(ans)):
-            l=ListNode(ans[i])
-            p.next=l
-            p=p.next
-        return k.next
+                # ans.append(i)
+        # for i in range(len(ans)):
+                newNode=ListNode(i)
+                newLi.next=newNode
+                newLi=newLi.next
+        return dummy.next
 
 
