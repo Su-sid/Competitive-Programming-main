@@ -4,17 +4,28 @@
 #         self.val = x
 #         self.next = None
 
+# class Solution:
+#     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         hashmap = set()
+#         while head:
+#             if head in hashmap:
+#                 return head
+#             hashmap.add(head)
+#             head = head.next
+
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        hashmap = set()
-        count= 0
-        while head:
-            if head in hashmap:
-
-                return head
-            hashmap.add(head)
-            head = head.next
-            # if head.next is None:
-            #     return head
-            count+=1
-        return head
+        fast = slow = head
+        
+        while fast and fast.next:
+            slow, fast = slow.next, fast.next.next
+            if slow == fast:
+                break
+        else: 
+            return None
+        
+        slow = head
+        while fast != slow:
+            slow, fast = slow.next, fast.next
+            
+        return slow
