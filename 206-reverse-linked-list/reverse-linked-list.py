@@ -4,12 +4,34 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+
+    def __init__(self):
+        self.new_list= None
+
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        new_list= None
+       
         current=head
-        while current:
+        final=self.reverser(current)
+        return final
+
+        # while current:
+        #     next_node= current.next
+        #     current.next= new_list
+        #     new_list=current
+        #     current=next_node
+        # return new_list
+
+    def reverser(self, current):
+        if current == None:
+            return self.new_list
+        # else:
+        if current != None:
             next_node= current.next
-            current.next= new_list
-            new_list=current
+            current.next= self.new_list
+            self.new_list=current
             current=next_node
-        return new_list
+        # current= next_node
+        return self.reverseList(current)
+
+
+            
