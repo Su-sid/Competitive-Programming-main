@@ -11,6 +11,7 @@ class Solution:
 
         if rowIndex == 0:
             return [1] 
+            
         prev = self.getRow(rowIndex-1)
         row = [1]
 
