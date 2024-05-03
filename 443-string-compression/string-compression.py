@@ -1,9 +1,9 @@
+
 class Solution:
     def compress(self, chars: List[str]) -> int:
 
         count = 1
         j = 0
-        
         if len(chars) == 1:
             return 1
         
@@ -21,3 +21,4 @@ class Solution:
                 count = 1
         
         return j
+     
