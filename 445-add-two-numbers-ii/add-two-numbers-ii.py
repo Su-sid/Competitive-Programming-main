@@ -8,7 +8,7 @@ class Solution:
         stack1=[]
         stack2=[]
 
-
+        #fill your stacks
         while l1:
             stack1.append(l1.val)
             l1=l1.next
@@ -17,8 +17,9 @@ class Solution:
             l2=l2.next
 
         carry= 0
-        res=  None
+        res= None
 
+        #pop from every stack while adding the values. 
         while stack1 or stack2 or carry:
             add= carry
 
@@ -27,12 +28,16 @@ class Solution:
 
             if stack2:
                 add+=stack2.pop()
-
+            
+            #modulo to get the last digit of a number above 10
             node= ListNode(add%10)
 
             node.next=res
             res=node
+
+            #get the first digit of a number greater than 10
             carry=add//10
+            # print('carry-value:',carry, add%10)
         return res
 
       
