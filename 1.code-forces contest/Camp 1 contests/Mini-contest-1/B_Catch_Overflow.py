@@ -1,5 +1,3 @@
-
-# def calculate(commands):
 MAX_X = 2**32 - 1
 stack = [1] 
 x = 0 
@@ -16,9 +14,10 @@ for i in range(tests):
     elif command.startswith("for"):
         n = int(command.split()[1])
         product = stack[-1] * n
-        if product > MAX_X:
-            product = MAX_X + 1  
-        stack.append(product)
+        if product <= MAX_X:
+            stack.append(product) 
+        else:
+            stack.append(MAX_X + 1  )
     
     elif command.startswith("end"):
         stack.pop()
