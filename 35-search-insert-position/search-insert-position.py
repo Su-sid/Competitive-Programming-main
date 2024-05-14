@@ -9,7 +9,7 @@ class Solution:
             if nums[mid]>=target: #mid =3 target = 5 
                 r= mid - 1
 
-            elif nums[mid]< target:
+            if nums[mid]< target:
                 l= mid + 1
             else:
                 l+1
