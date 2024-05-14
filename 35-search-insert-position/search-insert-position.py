@@ -8,11 +8,10 @@ class Solution:
             if nums[mid]==target:
                 return mid
 
-            if nums[mid]>=target: #mid =3 target = 5 
+            if nums[mid]> target: #mid =3 target = 5 
                 r= mid - 1
-
-            if nums[mid]< target:
-                l= mid + 1
             else:
-                l+1
+                l= mid + 1
+            # else:
+            #     l+1
         return l
