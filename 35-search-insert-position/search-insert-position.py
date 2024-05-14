@@ -5,6 +5,8 @@ class Solution:
         
         while l<=r:
             mid = l +(r-l)//2
+            if nums[mid]==target:
+                return mid
 
             if nums[mid]>=target: #mid =3 target = 5 
                 r= mid - 1
