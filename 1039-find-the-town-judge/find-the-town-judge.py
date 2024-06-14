@@ -15,8 +15,7 @@ class Solution:
 
         if len(temp)!=1:
             return -1
-        # if n == 1:
-        #     return 1
+    
             
         judge_candidate = temp.pop()
 
