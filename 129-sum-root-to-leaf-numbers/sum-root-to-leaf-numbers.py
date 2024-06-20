@@ -5,7 +5,6 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    totalF= 0
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
 
         def dfs(root,total):
@@ -14,12 +13,9 @@ class Solution:
 
             total= total*10+ root.val
 
-            if not (root.left or root.right) :
-                self.totalF+= total
-            
-            dfs(root.left, total)
-            dfs(root.right, total)
+            if not (root.left or  root.right ):
+                return total
 
-        dfs(root,0)
-        return self.totalF
-       
+            return dfs(root.left, total)+ dfs(root.right, total)
+
+        return dfs(root, 0)
