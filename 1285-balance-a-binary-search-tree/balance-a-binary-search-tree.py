@@ -20,7 +20,6 @@ class Solution:
             if l> r:
                 return 
             mid = (l+r)//2
-
             node.val= vector[mid]
             node.left= tCreate(l,mid-1)
             node.right=tCreate(mid+1,r)       
