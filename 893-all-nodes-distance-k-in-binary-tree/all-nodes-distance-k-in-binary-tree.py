@@ -45,10 +45,10 @@ class Solution:
         # use target as the root node and start traverse a depth equal to k. return the nodes that come at that level.     
         queue = deque()
         visited = list()
-
         queue.append(target.val)
         depth = 0
         
+        # do a bfs and stop when depth == k
         while queue:
             for _ in range(len(queue)):
                 if depth == k:
