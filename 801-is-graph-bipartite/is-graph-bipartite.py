@@ -22,9 +22,3 @@ class Solution:
                             return False
                         
         return True
-
-        # print(colored)
-  
-        # return bfs(0, graph)
-            
-
