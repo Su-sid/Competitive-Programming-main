@@ -29,6 +29,4 @@ class Solution:
                     if boundChecker(nx,ny) and grid[nx][ny] == 0:
                         grid[nx][ny]=1 
                         queue.append((nx, ny))
-                
-        
         return ans
