@@ -12,7 +12,7 @@ class Solution:
                    queue.append((i,j))
                    continue
                 ans[i][j]=-1 
-        # print(ans)
+        print(ans)
         # print(queue)
 
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1)] #back,down,up,front 
@@ -30,5 +30,4 @@ class Solution:
                     ans[nx][ny]=ans[x][y] +1    
                     queue.append((nx, ny))
               
-        
         return ans
