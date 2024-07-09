@@ -4,7 +4,7 @@ arr_a=list(map(int, input().split()))
 arr_b=list(map(int, input().split()))
 arr_c=list(map(int, input().split()))
 
-#counting the frequency of each element in the array a
+#counting the fre of each element in the array a
 
 frequency={}
 
