@@ -6,8 +6,4 @@ class Solution:
         # print(totalArr)
         total=sum(totalArr[:k])
 
-        # print(total)
-
-
-
         return total
