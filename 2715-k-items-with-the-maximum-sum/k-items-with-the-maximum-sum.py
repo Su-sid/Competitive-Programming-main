@@ -3,7 +3,7 @@ class Solution:
         # total= numOnes+ numZeros + numNegOnes
 
         totalArr=[1]*numOnes+[0]*numZeros+[-1]*numNegOnes
-        print(totalArr)
+        # print(totalArr)
         total=sum(totalArr[:k])
 
         # print(total)
