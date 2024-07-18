@@ -3,16 +3,11 @@ class Solution:
         # nums  =sorted (nums)
 
         maximum=0
-        n=len(nums)
-        
-
-        for i in range(n):
-            # print(i)
-            # print(maximum)
-            
+        # n=len(nums)
+        for i, num in enumerate(nums):            
             if maximum < i :  
                 return False
-            maximum= max(nums[i] +  i, maximum)
+            maximum= max(num +  i, maximum)
            
         return  True 
 
