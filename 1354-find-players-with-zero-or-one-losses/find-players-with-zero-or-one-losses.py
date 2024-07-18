@@ -9,8 +9,9 @@ class Solution:
         # print(winners.keys())
         # print(losers.keys())
 
-        wins= sorted(list(set(winners.keys())- set(losers.keys())))
+        wins= list(set(winners.keys())- set(losers.keys()))
 
-        loss= sorted (list(k for  k, v in losers.items() if v == 1))
+        loss= list(k for  k, v in losers.items() if v == 1)
+        wins.sort(), loss.sort()
 
         return [wins, loss]
