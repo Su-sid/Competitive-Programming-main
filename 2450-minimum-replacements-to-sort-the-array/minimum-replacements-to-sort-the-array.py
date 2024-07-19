@@ -1,10 +1,10 @@
 class Solution:
     def minimumReplacement(self, nums: List[int]) -> int:
         shifts= 0    
-        def isSorted(nums ):
-            return all(nums [i] <= nums [i+1] for i in range(len(nums ) - 1))
-        # print(isSorted(nums))
-        
+        # def isSorted(nums ):
+        #     return all(nums [i] <= nums [i+1] for i in range(len(nums ) - 1))
+        # # print(isSorted(nums))
+
         def sorterFunction(nums, shifts):
             n = len(nums)
             
@@ -26,7 +26,7 @@ class Solution:
                     largest =nums[i] // divideBy
             return shifts
         
-        if  isSorted(nums):
-            return shifts
-        else:
-            return sorterFunction(nums, shifts)
+        # if  isSorted(nums):
+        #     return shifts
+        # else:
+        return sorterFunction(nums, shifts)
