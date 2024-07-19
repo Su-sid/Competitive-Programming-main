@@ -4,10 +4,12 @@ class Solution:
         def isSorted(nums ):
             return all(nums [i] <= nums [i+1] for i in range(len(nums ) - 1))
         # print(isSorted(nums))
+        
         def sorterFunction(nums, shifts):
             n = len(nums)
             
             largest = nums[-1]
+
             for i in range(n-2, -1, -1): 
                 #start from the  second last index backwards
                 # check if its bigger than the largest index
