@@ -1,23 +1,36 @@
-t = int(input())
-results = []
-
-for _ in range(t):
-    n = int(input())
-    a = list(map(int, input().split()))
-
-    # The key here is to recognize that Alice's optimal strategy is to choose the second highest element in the array.
-    # Bob's strategy will be to choose the maximum segment. So Alice wins if k is less than the maximum of any segment.
-    # Thus, the largest k where Alice wins is the second highest element in the array.
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
     
-    max1 = max(a)  # The maximum element in the array
-    max2 = -1  # Initialize the second maximum element
+    index = 0
+    t = int(data[index])
+    index += 1
     
-    for num in a:
-        if num != max1:
-            if max2 == -1 or num > max2:
-                max2 = num
+    for _ in range(t):
+        n = int(data[index])
+        index += 1
+        arr = list(map(int, data[index:index+n]))
+        index += n
+        
+        # To find the smallest maximum among all subarrays starting from each position to the end
+        min_of_max = float('inf')
+        
+        # We iterate from the second to last element back to the first element
+        for start in range(n - 2, -1, -1):
+            # Initialize current maximum for subarrays starting at 'start'
+            current_max = arr[start]
+            
+            # We iterate from the start to the end of the array
+            for end in range(start + 1, n):
+                current_max = max(current_max, arr[end])
+            
+            # Update the minimum of the maximum values found
+            min_of_max = min(min_of_max, current_max)
+        
+        # The largest k for which Alice is guaranteed to win
+        k = min_of_max - 1
+        print(k)
 
-    results.append(max2)
-
-for result in results:
-    print(result)
+# This function can be called as needed, making sure input redirection is properly set up
+solve()

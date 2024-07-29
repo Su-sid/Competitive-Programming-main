@@ -11,15 +11,12 @@ while index < n - 1:
         if s[i] == '1':
             farthest = i
     
-   
     if farthest == index:
         print( -1)
     
-   
     index = farthest
     jumps += 1
-    
-    
+        
     if index == n - 1:
         print( jumps)
     
