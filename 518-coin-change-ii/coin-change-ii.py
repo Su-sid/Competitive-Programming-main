@@ -24,7 +24,7 @@ class Solution:
         
         memo = {}
 
-        def dfs(i, amt):
+        def dp(i, amt):
             if (i, amt) in memo:
                 return memo[(i, amt)]
             if i < 0:
@@ -32,11 +32,11 @@ class Solution:
             if amt == 0:
                 return 1
             
-            res = dfs(i - 1, amt)
+            res = dp(i - 1, amt)
             if amt - coins[i] >= 0:
-                res += dfs(i, amt - coins[i])
+                res += dp(i, amt - coins[i])
 
             memo[(i, amt)] = res
             return res
     
-        return dfs(len(coins) - 1, amount)
+        return dp(len(coins) - 1, amount)
