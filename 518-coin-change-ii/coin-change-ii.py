@@ -3,6 +3,9 @@ class Solution:
         def dp(memo, n, start):
             if n == 0:
                 return 1
+            if n < 0:
+                return 0
+
             if memo[n][start] != -1:
                 return memo[n][start]
             
