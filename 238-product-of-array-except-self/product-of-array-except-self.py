@@ -7,7 +7,7 @@ class Solution:
         postfix=1
 
         for i in range( n):
-            res[i]*= prefix
+            res[i]= prefix
            
             prefix*= nums[i]
             # print(res, prefix)
