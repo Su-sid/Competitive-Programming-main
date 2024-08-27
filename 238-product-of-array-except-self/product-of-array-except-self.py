@@ -6,11 +6,14 @@ class Solution:
         prefix=1
         postfix=1
 
-        for i in range(n):
-            res[i]= prefix
+        for i in range( n):
+            res[i]*= prefix
+           
             prefix*= nums[i]
+            # print(res, prefix)
         for i in range(n-1, -1,-1):
 
             res[i]*= postfix
             postfix*= nums[i]
+            # print(':',res, postfix)
         return res
