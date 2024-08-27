@@ -22,7 +22,6 @@ class BrowserHistory:
            
         return self.backHistory[-1]
         
-
     def forward(self, steps: int) -> str:
     #    while stack is not empty and steps is not == 0 execute the while statement. 
         while self.forwardHistory and steps:
@@ -34,8 +33,7 @@ class BrowserHistory:
         # return the last/ top element of the backHistory stack
         return self.backHistory[-1]
 
-        
-
+    
 
 # Your BrowserHistory object will be instantiated and called as such:
 # obj = BrowserHistory(homepage)
