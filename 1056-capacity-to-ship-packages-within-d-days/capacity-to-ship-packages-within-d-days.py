@@ -1,20 +1,33 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        maxWeight, totalWeight = -1, 0
-      
-        left, right = max(weights), sum(weights)
+                
+        def binarySearch(array):
+            left, right =0, sum(array)
+            minAnswer = sum(array)
+            while left<= right:
+                
+                capacity = left+ (right- left)//2
 
-        while left < right:
-            mid = (left + right) // 2
+                if possible(capacity):
+                    minAnswer= min(minAnswer, capacity) 
+                    right= capacity-1
+                else:
+                    left= capacity +1
 
-            daysNeeded, currWeight = 1, 0
-            for weight in weights:
-                if currWeight + weight > mid:
-                    daysNeeded += 1
-                    currWeight = 0
-                currWeight += weight
-            if daysNeeded > days:
-                left = mid + 1
-            else:
-                right = mid
-        return left
+            return minAnswer
+
+        def possible(capacity: int) -> bool:
+            cusum=0
+            ships =1
+
+            for num in weights:
+                if num > capacity:
+                    return False
+                if cusum + num > capacity:
+                    cusum= num
+                    ships+=1
+                else:
+                    cusum+=num
+            return ships <= days
+
+        return binarySearch(weights)
