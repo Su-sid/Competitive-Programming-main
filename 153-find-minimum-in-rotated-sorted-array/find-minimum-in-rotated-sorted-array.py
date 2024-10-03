@@ -6,7 +6,6 @@ class Solution:
         while left < right:
 
             mid = left + (right-left)//2
-
             if nums[mid] > nums[right] :
                 # pass
                 left= mid+1
