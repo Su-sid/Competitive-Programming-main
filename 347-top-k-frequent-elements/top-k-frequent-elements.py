@@ -8,3 +8,4 @@ class Solution:
         final = [key for key, _ in sorted_store[:k]]
 
         return final
+        
