@@ -1,41 +1,46 @@
 class Solution:
-
-    
     def sortArray(self, nums: List[int]) -> List[int]:
-        # Python program for implementation of MergeSort
 
-        if len(nums) > 1:
+        '''
+        For mergeSort you have to:
+        1. develop the sort function that will recursively call itself to split the main array into chunks. Also define the middle INDEX of the main array. 
+        2. develop the merge function that compares the first elements of the developed subarrays. 
+        3. if the first element of the leftArray is <= rightArray, then add the least element to the final array and vice versa. 
+        4.
+        '''
+        def merge (leftArr,rightArr ):
+            # pass
+            finalArr= []
+            left, right = 0, 0
+            # traverse all the elements in the array and if some remain traverse them too. 
+            while left < len(leftArr) and right < len(rightArr):
 
-            mid = len(nums)//2
-
-            L = nums[:mid]
-            # Into 2 halves
-            R = nums[mid:]
-            # Sorting the first half
-            self.sortArray(L)
-            # Sorting the second half
-            self.sortArray(R)
-            i = j = k = 0
-            # Copy data to temp arrays L[] and R[]
-            while i < len(L) and j < len(R):
-                if L[i] <= R[j]:
-                    nums[k] = L[i]
-                    i += 1
+                if leftArr[left] <= rightArr[right]:
+                    finalArr.append(leftArr[left])
+                    left+=1
                 else:
-                    nums[k] = R[j]
-                    j += 1
-                k += 1
+                    finalArr.append(rightArr[right]) 
+                    right+=1
 
-            # Checking if any element was left
-            while i < len(L):
-                nums[k] = L[i]
-                i += 1
-                k += 1
+            while left < len(leftArr):
+                finalArr.append(leftArr[left])
+                left+=1
+            while right < len(rightArr):
+                finalArr.append(rightArr[right])
+                right+=1
+            return finalArr
 
-            while j < len(R):
-                nums[k] = R[j]
-                j += 1
-                k += 1
+        def mergeSort(array):
+                   
+            if len(array) <2:
+                return array
 
-        return nums
+            mid = len(array) //2
+            # divide and conquer approach
+            leftArr= mergeSort(array[:mid])
+            rightArr= mergeSort(array[mid:])
+            # print(leftArr)
+            # print(rightArr)
+            return merge(leftArr, rightArr)
 
+        return mergeSort(nums)
