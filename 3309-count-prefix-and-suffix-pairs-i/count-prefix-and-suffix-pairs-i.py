@@ -13,25 +13,13 @@ class Solution:
             if not (pref== suff==str1):
                 return False
             return True    
-        i= 0 
-        # j = 1
-        tally=0
-        words_len= len(words)   
 
-        for i in range(words_len):
-            str1= words[i]
-            j = i+1
-            # print(str1)
-            while j < words_len:
-                str2= words[j]
-                # print((str1, str2))
-                if isPrefixAndSuffix(str1, str2):
-                    tally+=1
-                j +=1
-            # tally+=1
-            # i +=1
-
-        return tally
+        count=0
+        for i in range(len(words)):
+            for j in range(i+1,len(words)):
+                if isPrefixAndSuffix(words[i], words[j]):
+                    count+=1
+        return count
 
         
 
