@@ -14,6 +14,8 @@ class Solution:
    
         def dfs(node):
             aCount= 0
+            if node not in graph:
+                return aCount
 
             for neighbor in graph[node]:
                 if neighbor not in visited:
