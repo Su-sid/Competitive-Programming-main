@@ -7,8 +7,7 @@ class Solution:
         destination= len(graph)-1
 
         for node, children in enumerate(graph):
-            # if not children:
-            #     destination= node 
+    
             graphStore[node]=children
 
         print(destination)
