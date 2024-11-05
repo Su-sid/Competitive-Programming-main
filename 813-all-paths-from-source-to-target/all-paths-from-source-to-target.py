@@ -7,11 +7,8 @@ class Solution:
         destination= len(graph)-1
 
         for node, children in enumerate(graph):
-    
             graphStore[node]=children
 
-        print(destination)
-            
         def dfs(node):
             visited.add(node)
             tempArr.append(node)
