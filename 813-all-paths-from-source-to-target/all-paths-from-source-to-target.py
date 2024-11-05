@@ -1,7 +1,6 @@
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
         graphStore = defaultdict(list)
-        visited =set()
         tempArr=list()
         finalArr=list()
         destination= len(graph)-1
@@ -9,22 +8,22 @@ class Solution:
         for node, children in enumerate(graph):
             graphStore[node]=children
 
+        # print(graphStore)
         def dfs(node):
-            visited.add(node)
+            # add the current node to the tempArr
             tempArr.append(node)
 
+            # print(tempArr)
             if node == destination:
+                # copy values from the tempArr to the finalArr
                 finalArr.append(tempArr[:])
-          
+            # travel through the neighbors 
             for neighbor in graphStore[node]:
-                if neighbor not in visited:
-                    dfs(neighbor)
+                dfs(neighbor)
 
-            visited.remove(node)
             tempArr.pop()
-
+        # start the traversal from the fist node. 
         dfs(0)
-
         return  finalArr
 
                 
