@@ -16,8 +16,8 @@ class Solution:
             maxD= 0     
 
             for child in node.children:
-                childMax = dfs(child)
-                maxD= max(maxD,childMax)
+                maxD= max(maxD, dfs(child))
+                # print(maxD)
             return maxD +1
 
         return dfs(root)
