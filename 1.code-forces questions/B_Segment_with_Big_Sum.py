@@ -1,24 +1,19 @@
-
-n, s = list(map(int, input().split()))
-
+n, s = map(int, input().split())
 nums = list(map(int, input().split()))
 
-left=0
-right= 0
-Acount=0
-cusum= 0 
-
-while right < n:
-    cusum+=nums[right]
-    # progresive decrement
-    while cusum > s:
-        # print(left)
-        cusum-=nums[left]
-        left+=1
+left = 0
+cusum = 0
+Acount = n + 1 
+ 
+for right in range(n):
+    cusum += nums[right]
     
-    Acount= max(Acount, right - left+1)
-    right+=1
+    while cusum >= s:  
+        Acount = min(Acount, right - left + 1)
+        cusum -= nums[left]
+        left += 1
 
-print(Acount)
-
-
+if Acount == n + 1:
+    print(-1) 
+else:
+    print(Acount)
