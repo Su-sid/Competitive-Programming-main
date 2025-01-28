@@ -5,7 +5,7 @@ class Solution:
             strNum = [int(i) for i in str(num)] 
             if len(strNum) <2:
                 num = strNum[0]
-                print(num)
+                # print(num)
                 return num
             return rec(sum(strNum))
 
